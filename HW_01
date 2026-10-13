@@ -1,0 +1,65 @@
+package Homeworks;
+
+import java.util.Scanner;
+
+public class HW_01_RockPaperScissors {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        String moveA;
+        String moveB;
+
+        //Player A turn
+        System.out.print("Player A, enter R, P, or S: ");
+        moveA = in.nextLine();
+
+        if (!moveA.equalsIgnoreCase("R") &&
+                !moveA.equalsIgnoreCase("P") &&
+                !moveA.equalsIgnoreCase("S")) {
+            System.out.println("Error: Invalid input for Player A");
+            System.exit(0);
+        }
+
+        //Player B turn
+        System.out.print("Player B, enter R, P, or S: ");
+        moveB = in.nextLine();
+
+        if (!moveB.equalsIgnoreCase("R") &&
+                !moveB.equalsIgnoreCase("P") &&
+                !moveB.equalsIgnoreCase("S")) {
+            System.out.println("Error: Invalid input for Player B");
+            System.exit(0);
+        }
+
+        //Results
+        if (moveA.equalsIgnoreCase(moveB))
+        {
+            System.out.println(moveA + " v " + moveB + " | It's a tie!");
+        }
+        else if (moveA.equalsIgnoreCase("R") && moveB.equalsIgnoreCase("S"))
+        {
+            System.out.println("Rock crushes Scissors | Player A wins!");
+        }
+        else if (moveA.equalsIgnoreCase("S") && moveB.equalsIgnoreCase("P"))
+        {
+            System.out.println("Scissors cuts paper | Player A wins!");
+        }
+        else if (moveA.equalsIgnoreCase("P") && moveB.equalsIgnoreCase("R"))
+        {
+            System.out.println("Paper covers Rock | Player A wins!");
+        }
+        else if (moveB.equalsIgnoreCase("R") && moveA.equalsIgnoreCase("S"))
+        {
+            System.out.println("Rock crushes Scissors | Player B wins!");
+        }
+        else if (moveB.equalsIgnoreCase("S") && moveA.equalsIgnoreCase("P"))
+        {
+            System.out.println("Scissors cuts Paper | Player B wins!");
+        }
+        else if (moveB.equalsIgnoreCase("P") && moveA.equalsIgnoreCase("R"))
+        {
+            System.out.println("Paper covers rock | Player B wins!");
+        }
+    }
+}
